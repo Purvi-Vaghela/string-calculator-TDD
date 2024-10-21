@@ -10,7 +10,13 @@ export function add(numbers) {
     }
       // sum of two numbers 
       const numArray = numbers.split(",");
-      return numArray.reduce((sum, num) => sum + parseInt(num), 0);
+    //   return numArray.reduce((sum, num) => sum + parseInt(num), 0);
+
+    // sum of multiple numbers having new line as delimiter
+     const numHavingNewLineDelimiter = numbers.split(/[\n,]/);
+     return numHavingNewLineDelimiter.reduce((sum, num) => sum + parseInt(num), 0);
+
+     //
 }
 
-// console.log(add("3,4"))
+// console.log(add("1\n2,3"));
