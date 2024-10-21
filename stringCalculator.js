@@ -4,4 +4,8 @@ export function add(numbers) {
     if (numbers === "") {
         return 0;
     }
+    //single number
+    if(numbers)
+        return numbers;
+
 }
