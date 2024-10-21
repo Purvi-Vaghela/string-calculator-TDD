@@ -21,7 +21,12 @@ describe('String Calculator', () => {
      it('should return the sum of multiple numbers', () => {
           expect(add("1,2,3")).to.equal(6);
      });
-     
+
+    // New Line
+    it('should handle new lines', () => {
+        expect(add("1\n2,3")).to.equal(6);
+    });
+
 
 
 
