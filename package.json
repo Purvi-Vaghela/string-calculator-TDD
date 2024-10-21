@@ -2,8 +2,9 @@
   "name": "string-calculator-tdd",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "mocha test.js"
+    "test": "mocha stringCalculator.test.js"
   },
   "author": "",
   "license": "ISC",
