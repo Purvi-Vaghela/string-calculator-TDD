@@ -1,31 +1,31 @@
 export function add(numbers) {
+  // Empty string returns 0
+  if (numbers === "") {
+    return 0;
+  }
 
-    // Empty string 
-    if (numbers === "") {
-        return 0;
-    }
-    //single number
-    if (!isNaN(numbers)) {
-        return parseInt(numbers, 10); // Convert the string to a number
-    }
-      // sum of two numbers 
-    //   const numArray = numbers.split(",");
-    //   return numArray.reduce((sum, num) => sum + parseInt(num), 0);
-
-    // sum of multiple numbers having new line as delimiter
-     const numHavingNewLineDelimiter = numbers.split(/[\n,]/);
-    //  return numHavingNewLineDelimiter.reduce((sum, num) => sum + parseInt(num), 0);
-    
-    let delimiter = /[\n,]/;
-     //custom delimiter
-       //"//;\n1;2" :-->>  first part: //;  second: 1;2 
+  // Default delimiter is comma and newline
+  let delimiter = /[\n,]/;
   if (numbers.startsWith("//")) {
     const parts = numbers.split("\n");
     delimiter = new RegExp(`[${parts[0].slice(2)}]`);
     numbers = parts[1];
-}
-    const numArray = numbers.split(delimiter);
-     return numArray.reduce((sum, num) => sum + parseInt(num), 0);
+ 
 }
 
-console.log(add("//;\n1;2"));
+  // Split the numbers by the delimiter
+  const numArray = numbers.split(delimiter);
+
+  // Check for negative numbers
+  const negatives = numArray.filter((num) => parseInt(num) < 0);
+  if (negatives.length > 0) {
+    throw `Negative numbers not allowed: ${negatives.join(",")}`;
+  }
+  
+
+
+ 
+}
+
+// console.log(add("//;\n1;2"));
+console.log(add("1,-2,3"));
