@@ -5,7 +5,9 @@ export function add(numbers) {
         return 0;
     }
     //single number
-    if(numbers)
-        return numbers;
+    if (!isNaN(numbers)) {
+        return parseInt(numbers, 10); // Convert the string to a number
+    }
+    
 
 }
