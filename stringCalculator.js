@@ -8,7 +8,7 @@ export function add(numbers) {
     if (!isNaN(numbers)) {
         return parseInt(numbers, 10); // Convert the string to a number
     }
-      // sum of two numbers
+      // sum of two numbers 
       const numArray = numbers.split(",");
       return numArray.reduce((sum, num) => sum + parseInt(num), 0);
 }

@@ -17,5 +17,12 @@ describe('String Calculator', () => {
         expect(add("1,2")).to.equal(3);
     });
 
+    //sum of multiple numbers
+     it('should return the sum of multiple numbers', () => {
+          expect(add("1,2,3")).to.equal(6);
+     });
+     
+
+
 
 });
